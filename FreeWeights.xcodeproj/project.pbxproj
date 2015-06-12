@@ -27,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		866718F91B2B23ED00D22488 /* Model.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Model.playground; sourceTree = "<group>"; };
 		86A2B8FF1B202A9F005E4591 /* FreeWeights.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreeWeights.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86A2B9031B202A9F005E4591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86A2B9041B202A9F005E4591 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		866718F81B2B23BE00D22488 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86A2B9061B202A9F005E4591 /* FreeWeights.xcdatamodeld */,
+				866718F91B2B23ED00D22488 /* Model.playground */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		86A2B8F61B202A9F005E4591 = {
 			isa = PBXGroup;
 			children = (
@@ -84,7 +94,7 @@
 				86A2B90B1B202A9F005E4591 /* Main.storyboard */,
 				86A2B90E1B202A9F005E4591 /* Images.xcassets */,
 				86A2B9101B202A9F005E4591 /* LaunchScreen.xib */,
-				86A2B9061B202A9F005E4591 /* FreeWeights.xcdatamodeld */,
+				866718F81B2B23BE00D22488 /* Model */,
 				86A2B9021B202A9F005E4591 /* Supporting Files */,
 			);
 			path = FreeWeights;

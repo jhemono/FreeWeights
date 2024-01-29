@@ -1,34 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14E26a" minimumToolsVersion="Automatic">
-    <entity name="Entity" parentEntity="Movement" syncable="YES">
-        <attribute name="weight" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-    </entity>
     <entity name="Exercise" syncable="YES">
         <attribute name="instructions" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Movement" syncable="YES">
-        <attribute name="weightGoal" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    <entity name="Set" isAbstract="YES" syncable="YES">
+        <attribute name="reps" optional="YES" attributeType="Integer 16" minValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
     </entity>
-    <entity name="Set" parentEntity="SetGoal" syncable="YES">
-        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SetGoal" syncable="YES"/>
+    <entity name="SetDo" parentEntity="Set" syncable="YES">
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SetGoal" inverseName="executions" inverseEntity="SetGoal" syncable="YES"/>
     </entity>
-    <entity name="SetGoal" syncable="YES">
-        <attribute name="reps" attributeType="Integer 16" minValueString="1" syncable="YES"/>
+    <entity name="SetGoal" parentEntity="Set" syncable="YES">
+        <relationship name="executions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SetDo" inverseName="goal" inverseEntity="SetDo" syncable="YES"/>
     </entity>
     <entity name="StraightSet" parentEntity="StraightSetGoal" syncable="YES">
-        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Set" syncable="YES"/>
+        <relationship name="sets" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="SetDo" syncable="YES"/>
     </entity>
     <entity name="StraightSetGoal" syncable="YES">
         <relationship name="setGoals" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SetGoal" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SetGoal" positionX="540" positionY="-1062" width="128" height="58"/>
-        <element name="StraightSetGoal" positionX="529" positionY="-1224" width="128" height="58"/>
-        <element name="StraightSet" positionX="340" positionY="-1224" width="128" height="58"/>
-        <element name="Exercise" positionX="837" positionY="-1054" width="128" height="73"/>
-        <element name="Movement" positionX="538" positionY="-954" width="128" height="58"/>
-        <element name="Entity" positionX="333" positionY="-949" width="128" height="58"/>
-        <element name="Set" positionX="333" positionY="-1062" width="128" height="58"/>
+        <element name="Exercise" positionX="459" positionY="-954" width="128" height="73"/>
+        <element name="Set" positionX="457" positionY="-1161" width="128" height="73"/>
+        <element name="SetDo" positionX="342" positionY="-1062" width="128" height="58"/>
+        <element name="SetGoal" positionX="574" positionY="-1062" width="128" height="58"/>
+        <element name="StraightSet" positionX="378" positionY="-1287" width="128" height="58"/>
+        <element name="StraightSetGoal" positionX="639" positionY="-1287" width="128" height="58"/>
     </elements>
 </model>
